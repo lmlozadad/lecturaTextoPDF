@@ -13,7 +13,7 @@ class readingPdf extends Command
      *
      * @var string
      */
-    protected $signature = 'custom:readingPdf {--filename=sample-text}';
+    protected $signature = 'custom:readingPdf {--filename=sample}';
 
     /**
      * The console command description.
@@ -34,7 +34,7 @@ class readingPdf extends Command
         if (!Storage::exists($this->option('filename').'.pdf')) {
             $this->error("No existe el documento: ".$filename);
             $this->newLine();
-            $filename = 'sample-text.pdf';
+            $filename = 'sample.pdf';
         }
 
         $this->info("Leyendo el texto encontrado en: ".$filename);
